@@ -1,4 +1,5 @@
-$(document).ready(function(){
+$(document).ready(function()
+{
   function displayt()
   {
     var curdate =new Date();
@@ -10,7 +11,14 @@ $(document).ready(function(){
     if(mins<10)
       mins="0"+mins;
     var clkdiv=document.getElementById('clk');
+    var d = document.getElementById('clk');
+    d.style.position = "relative";
+    d.style.left = -50+'px';
+    d.style.top = 200+'px';
     clkdiv.innerText = hours + ":" + mins + ":" + secs ;
+    clkdiv.style.fontSize = "60px";
+    clkdiv.style.color = "grey";
+    clkdiv.style.fontWeight="bolder";
   }
   function displayage()
   {
@@ -23,9 +31,17 @@ $(document).ready(function(){
     age *=3.17098*(10**-11);
     var agediv=document.getElementById('age');
     agediv.innerText = age.toPrecision(11);
+    var d = document.getElementById('age');
+    d.style.position = "relative";
+    d.style.left = 0+'px';
+    d.style.top = 100+'px';
+    agediv.style.fontSize = "75px";
+    agediv.style.color = "grey";
+    agediv.style.fontWeight="bolder";
   }
-  displayt();
   displayage();
-  setInterval(displayt, 1000);
+  displayt();
   setInterval(displayage,100);
-});
+  setInterval(displayt, 1000);
+}
+);
